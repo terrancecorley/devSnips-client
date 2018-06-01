@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function Landing(props) {
+  //if user signed in set redirect to snips
+
  return (
    <form>
      <label htmlFor="username">Username</label>
@@ -18,5 +20,5 @@ export default function Landing(props) {
       <button type="submit">Log In</button>
       <p>Click <a href="#">here</a> to create an account.</p>
    </form>
- )
+ );
 };
