@@ -18,7 +18,7 @@ export default function Landing(props) {
       name="user_password"
       />
       <button type="submit">Log In</button>
-      <p>Click <a href="#">here</a> to create an account.</p>
+      <p>Click <a href="#" rel="noopener noreferrer">here</a> to create an account.</p>
    </form>
  );
 };
