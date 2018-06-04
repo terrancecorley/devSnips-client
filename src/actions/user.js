@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode';
 import { API_BASE_URL } from '../config';
 
 
@@ -55,7 +54,6 @@ export const fetchLoginError = (error) => ({
 });
 
 const storeToken = (token, dispatch) => {
-  const decodeToken = jwtDecode(token);
   dispatch(setToken(token));
   try {
     localStorage.setItem('token', token);
@@ -69,7 +67,7 @@ export const fetchLogin = (username, password) => (dispatch) => {
   fetch(`${API_BASE_URL}/api/login`, {
     method: 'POST',
     headers: {
-      'content-type': 'application-type/json'
+      'content-type': 'application/json'
     },
     body: JSON.stringify({username, password})
   })

@@ -1,34 +1,50 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { required, checkEmpty } from '../../validators';
+import { reduxForm, Field } from 'redux-form';
+import { Redirect } from 'react-router-dom';
+import { fetchLogin } from '../../actions/user';
 
-class Landing extends Component {
-  //if user signed in set redirect to snips
+export class Landing extends Component {
+
+  onSubmit(values){
+    const { username, password } = values;
+    this.props.dispatch(fetchLogin(username, password));
+  }
 
   render() {
+    if (localStorage.getItem('token')){
+      return <Redirect to="/homepage" />;
+    }
+
+    //rerender after loggin in to redirect page || add logged in to state and change based off that?
+
     return (
-      <form>
+      <form 
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <label htmlFor="username">Username</label>
-        <input
-         type="text"
-         id="username"
-         name="username"
+        <Field
+          component="input"
+          type="text"
+          id="username"
+          name="username"
+          validate={[required, checkEmpty]}
          />
         <label htmlFor="password">Password</label>
-        <input
-         type="password"
-         id="password"
-         name="user_password"
+        <Field
+          component="input"
+          type="password"
+          id="password"
+          name="password"
+          validate={[required, checkEmpty]}
          />
          <button type="submit">Log In</button>
          <p>Click <Link to="/signup">here</Link> to create an account.</p>
       </form>
     );
-  }
+  };
 };
 
-const mapStateToProps = (state) => ({
-  token: state.userReducer.token
-});
-
-export default connect(mapStateToProps)(Landing);
+export default reduxForm({
+  form: 'loginForm'
+})(Landing);
