@@ -14,6 +14,26 @@ export const removeToken = () => ({
   token: null
 });
 
+export const USER_REGISTER_REQUEST = 'USER_REGISTER_REQUEST';
+export const fetchRegisterRequest = () => ({
+  type: USER_REGISTER_REQUEST,
+  loading: true
+});
+
+export const USER_REGISTER_SUCCESS = 'USER_REGISTER_SUCCESS';
+export const fetchRegisterSuccess = () => ({
+  type: USER_REGISTER_SUCCESS,
+  loading: false,
+  error: null
+});
+
+export const USER_REGISTER_ERROR = 'USER_REGISTER_ERROR';
+export const fetchRegisterError = (error) => ({
+  type: USER_REGISTER_ERROR,
+  loading: false,
+  error
+});
+
 export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
 export const fetchLoginRequest = () => ({
   type: USER_LOGIN_REQUEST,
@@ -36,11 +56,11 @@ export const fetchLoginError = (error) => ({
 
 const storeToken = (token, dispatch) => {
   const decodeToken = jwtDecode(token);
-  disptach(setToken(token));
+  dispatch(setToken(token));
   try {
     localStorage.setItem('token', token);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
   }
 };
 
@@ -53,10 +73,25 @@ export const fetchLogin = (username, password) => (dispatch) => {
     },
     body: JSON.stringify({username, password})
   })
-  .then(response => response.json())
+  .then(res => res.json())
   .then(({authToken}) => storeToken(authToken, dispatch))
-  .then(() => disptach(fetchLoginSuccess()))
-  .catch(error => dispatch(fetchLoginError(error)));
+  .then(() => dispatch(fetchLoginSuccess()))
+  .catch(err => dispatch(fetchLoginError(err)));
+};
+
+export const registerUser = (user) => (dispatch) => {
+  dispatch(fetchLoginRequest());
+  return fetch(`${API_BASE_URL}/api/users`, {
+    method : 'POST',
+    headers : {
+      'content-type' : 'application/json'
+    },
+    body : JSON.stringify(user)
+  })
+  .then(res => res.json())
+  .then(() => dispatch(fetchRegisterSuccess()))
+  .then(() => fetchLogin())
+  .catch(err => dispatch(fetchRegisterError(err)));
 };
 
 export const logout = () => () => {
