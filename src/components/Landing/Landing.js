@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Landing(props) {
   //if user signed in set redirect to snips
@@ -18,7 +19,7 @@ export default function Landing(props) {
       name="user_password"
       />
       <button type="submit">Log In</button>
-      <p>Click <a href="#" rel="noopener noreferrer">here</a> to create an account.</p>
+      <p>Click <Link to="/signup">here</Link> to create an account.</p>
    </form>
  );
 };

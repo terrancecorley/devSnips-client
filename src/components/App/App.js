@@ -15,8 +15,9 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Route exact path="/" component={LandingHeader} />
+          <Route exact path="/signup" component={LandingHeader} />
           <Route exact path="/homepage" component={HomeHeader} />
-          
+
           <Banner />
           <main>
             <Route exact path="/" component={Landing} />

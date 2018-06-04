@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignUp(props) {
   return (
@@ -21,8 +22,8 @@ export default function SignUp(props) {
       id="password"
       name="user_password"
       />
-      <button type="submit">Log In</button>
-      <p>Click <a href="#" rel="noopener noreferrer">here</a> to create an account.</p>
+      <button type="submit">Register</button>
+      <p>Already have an account?<Link to="/"> Sign in</Link>.</p>
    </form>
   );
 };

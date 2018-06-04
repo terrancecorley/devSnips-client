@@ -21,11 +21,10 @@ export const fetchLoginRequest = () => ({
 });
 
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
-export const fetchLoginSuccess = (authToken) => ({
+export const fetchLoginSuccess = () => ({
   type: USER_LOGIN_SUCCESS,
   loading: false,
-  error: null,
-  authToken
+  error: null
 });
 
 export const USER_LOGIN_ERROR = 'USER_LOGIN_ERROR';
@@ -34,6 +33,16 @@ export const fetchLoginError = (error) => ({
   loading: false,
   error
 });
+
+const storeToken = (token, dispatch) => {
+  const decodeToken = jwtDecode(token);
+  disptach(setToken(token));
+  try {
+    localStorage.setItem('token', token);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const fetchLogin = (username, password) => (dispatch) => {
   dispatch(fetchLoginRequest());
@@ -45,8 +54,13 @@ export const fetchLogin = (username, password) => (dispatch) => {
     body: JSON.stringify({username, password})
   })
   .then(response => response.json())
-  .then(authToken => dispatch(fetchLoginSuccess(authToken)))
+  .then(({authToken}) => storeToken(authToken, dispatch))
+  .then(() => disptach(fetchLoginSuccess()))
   .catch(error => dispatch(fetchLoginError(error)));
+};
+
+export const logout = () => () => {
+  localStorage.removeItem('token');
 };
 
 
