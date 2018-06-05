@@ -6,12 +6,14 @@ import {
   USER_REGISTER_ERROR,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
-  USER_LOGIN_ERROR
+  USER_LOGIN_ERROR,
+  LOGOUT
 } from '../actions/user';
 
 const initialState = {
   loading: false,
   token: null,
+  loggedIn: false,
   error: null,
 };
 
@@ -59,6 +61,7 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: action.loading,
+        loggedIn: action.loggedIn,
         error: action.error
       }
       break;
@@ -66,9 +69,16 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: action.loading,
+        loggedIn: action.loggedIn,
         error: action.error
       }
-      break;   
+      break;
+    case LOGOUT:
+      return {
+        ...state,
+        token: action.token,
+        loggedIn: action.loggedIn
+      }   
     default: 
       return state;
   };

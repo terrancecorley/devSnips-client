@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { required, checkEmpty } from '../../validators';
 import { reduxForm, Field } from 'redux-form';
@@ -13,11 +14,10 @@ export class Landing extends Component {
   }
 
   render() {
-    if (localStorage.getItem('token')){
+
+    if (this.props.loggedIn === true){
       return <Redirect to="/homepage" />;
     }
-
-    //rerender after loggin in to redirect page || add logged in to state and change based off that?
 
     return (
       <form 
@@ -45,6 +45,12 @@ export class Landing extends Component {
   };
 };
 
-export default reduxForm({
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.userReducer.loggedIn
+  };
+};
+
+export default connect(mapStateToProps)(reduxForm({
   form: 'loginForm'
-})(Landing);
+})(Landing));

@@ -43,6 +43,7 @@ export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const fetchLoginSuccess = () => ({
   type: USER_LOGIN_SUCCESS,
   loading: false,
+  loggedIn: true,
   error: null
 });
 
@@ -50,7 +51,15 @@ export const USER_LOGIN_ERROR = 'USER_LOGIN_ERROR';
 export const fetchLoginError = (error) => ({
   type: USER_LOGIN_ERROR,
   loading: false,
+  loggedIn: false,
   error
+});
+
+export const LOGOUT = 'LOGOUT';
+export const logout = () => ({
+  type: LOGOUT,
+  token: null,
+  loggedIn: false
 });
 
 const storeToken = (token, dispatch) => {
@@ -92,9 +101,7 @@ export const registerUser = (user) => (dispatch) => {
   .catch(err => dispatch(fetchRegisterError(err)));
 };
 
-export const logout = () => () => {
-  localStorage.removeItem('token');
-};
+
 
 
 
