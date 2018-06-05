@@ -37,7 +37,7 @@ export const fetchSnips = () => (dispatch) => {
   const token = localStorage.getItem('token');
   dispatch(fetchSnipsRequest());
 
-  fetch(`${API_BASE_URL}/api/snips`, {
+  return fetch(`${API_BASE_URL}/api/snips`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
@@ -51,7 +51,7 @@ export const postSnip = (snip) => (dispatch) => {
   const token = localStorage.getItem('token');
   dispatch(postSnipRequest());
 
-  fetch(`${API_BASE_URL}/api/snips`, {
+  return fetch(`${API_BASE_URL}/api/snips`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -67,7 +67,7 @@ export const updateSnip = (snip, snipID) => (dispatch) => {
   const token = localStorage.getItem('token');
   dispatch(postSnipRequest());
 
-  fetch(`${API_BASE_URL}/api/snips`, {
+  return fetch(`${API_BASE_URL}/api/snips`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',

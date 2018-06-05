@@ -81,14 +81,12 @@ export const fetchLogin = (username, password) => (dispatch) => {
     body: JSON.stringify({username, password})
   })
   .then((res) => {
-    console.log(res.status !== 200);
     if (res.status !== 200) {
       const errMessage = new Error('Authorization Error');
       throw errMessage; 
     }
     return res.json();
   })
-  // .then(res => res.json())
   .then(({authToken}) => storeToken(authToken, dispatch))
   .then(() => dispatch(fetchLoginSuccess()))
   .catch(err => dispatch(fetchLoginError(err)));
