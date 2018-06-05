@@ -73,14 +73,22 @@ const storeToken = (token, dispatch) => {
 
 export const fetchLogin = (username, password) => (dispatch) => {
   dispatch(fetchLoginRequest());
-  fetch(`${API_BASE_URL}/api/login`, {
+  return fetch(`${API_BASE_URL}/api/login`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
     },
     body: JSON.stringify({username, password})
   })
-  .then(res => res.json())
+  .then((res) => {
+    console.log(res.status !== 200);
+    if (res.status !== 200) {
+      const errMessage = new Error('Authorization Error');
+      throw errMessage; 
+    }
+    return res.json();
+  })
+  // .then(res => res.json())
   .then(({authToken}) => storeToken(authToken, dispatch))
   .then(() => dispatch(fetchLoginSuccess()))
   .catch(err => dispatch(fetchLoginError(err)));
@@ -96,8 +104,10 @@ export const registerUser = (user) => (dispatch) => {
     body : JSON.stringify(user)
   })
   .then(res => res.json())
-  .then(() => dispatch(fetchRegisterSuccess()))
-  .then(() => fetchLogin())
+  .then(() => {
+    dispatch(fetchRegisterSuccess());
+    return dispatch(fetchLogin(user.username, user.password));
+  })
   .catch(err => dispatch(fetchRegisterError(err)));
 };
 

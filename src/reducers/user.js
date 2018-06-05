@@ -66,6 +66,7 @@ const userReducer = (state = initialState, action) => {
       }
       break;
     case USER_LOGIN_ERROR:
+      console.log(action.loggedIn)
       return {
         ...state,
         loading: action.loading,
