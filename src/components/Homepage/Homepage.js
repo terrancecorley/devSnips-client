@@ -5,10 +5,44 @@ import Markdown from 'markdown-to-jsx';
 import BlankSnip from './BlankSnip/BlankSnip';
 
 export class Homepage extends Component {
-
   
   componentDidMount() {
-    this.props.dispatch(fetchSnips());
+    // let snips = null;
+
+    return this.props.dispatch(fetchSnips())
+    // .then(() => snips = this.props.snips)
+    // .then((snips) => {
+
+    // });
+  }
+
+  insertSnips() {
+    let snipsInState = this.props.snips;
+    console.log(snipsInState);
+
+    let snips = snipsInState.map((snip, index) => {
+      return <li key={index}>
+        <div class="snip-header">
+          <div>
+            <h1>{snip.title}</h1>
+          </div>
+          <div>
+            <button>X</button>
+          </div>
+        </div>
+        <div class="snip-body">
+          <textarea name="snip_body">{snip.content}</textarea>
+        </div>
+        <div class="snip-footer">
+          <div class="submit-controls">
+            <button>Done</button>
+          </div>
+        </div>
+      </li>
+    })
+    console.log(snips);
+
+    return [snips];
   }
 
   insertBlankSnip() {
@@ -28,6 +62,7 @@ export class Homepage extends Component {
         </button>
         <ul className="snips-list">
           {this.insertBlankSnip()}
+          {this.insertSnips()}
         </ul>
       </section>
     );
@@ -48,3 +83,8 @@ export default connect(mapStateToProps)(Homepage);
     // make a post and save the data in the db
     // upon success display the notes
       // converted md into html
+
+
+// PRIORITIES
+// view, add snips
+// posting, viewing new snips
