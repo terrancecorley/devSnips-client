@@ -6,6 +6,12 @@ export const fetchSnipsRequest = () => ({
   loading: true
 }); 
 
+export const CREATE_SNIP = 'CREATE_SNIP';
+export const createSnip = () => ({
+  type: CREATE_SNIP,
+  creatingNew: true
+});
+
 export const POST_SNIP_REQUEST = 'POST_SNIP_REQUEST';
 export const postSnipRequest = () => ({
   type: POST_SNIP_REQUEST,
@@ -23,6 +29,7 @@ export const snipsSuccess = (snips) => ({
   type: SNIPS_SUCCESS,
   loading: false,
   error: null,
+  creatingNew: false,
   snips
 }); 
 
@@ -32,6 +39,7 @@ export const snipsError = (error) => ({
   loading: false,
   error
 }); 
+
 
 export const fetchSnips = () => (dispatch) => {
   const token = localStorage.getItem('token');

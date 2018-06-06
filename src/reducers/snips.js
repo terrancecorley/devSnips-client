@@ -1,5 +1,6 @@
 import {
   FETCH_SNIPS_REQUEST,
+  CREATE_SNIP,
   POST_SNIP_REQUEST,
   SNIPS_SUCCESS,
   SNIPS_ERROR
@@ -7,6 +8,7 @@ import {
 
 const initialState = {
   snips: [],
+  creatingNew: false,
   loading: false,
   error: null
 };
@@ -20,6 +22,12 @@ const snipReducer = (state=initialState, action) => {
         loading: action.loading
       }
       break;
+    case CREATE_SNIP:
+      return {
+        ...state,
+        creatingNew: action.creatingNew
+      }
+      break;
     case POST_SNIP_REQUEST:
       return {
         ...state,
@@ -30,7 +38,8 @@ const snipReducer = (state=initialState, action) => {
       return {
         ...state,
         loading: action.loading,
-        snips: action.snips
+        snips: action.snips,
+        creatingNew: action.creatingNew
       }
       break;
     case SNIPS_ERROR:

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSnips, postSnip } from '../../actions/snips';
+import { fetchSnips, postSnip, createSnip } from '../../actions/snips';
 import Markdown from 'markdown-to-jsx';
+import BlankSnip from './BlankSnip/BlankSnip';
 
 export class Homepage extends Component {
 
@@ -10,54 +11,24 @@ export class Homepage extends Component {
     this.props.dispatch(fetchSnips());
   }
 
-  generateBlankSnipHTML() {
-    return `
-      <li>
-        <div class="snip-header">
-          <div>
-            <input type="text" name="snip_title"></input>
-          </div>
-          <div>
-            <button>X</button>
-          </div>
-        </div>
-        <div class="snip-body">
-          <textarea name="snip_body"></textarea>
-        </div>
-        <div class="snip-footer">
-          <div class="submit-controls">
-            <button>Done</button>
-          </div>
-        </div>
-      </li>
-    `
+  insertBlankSnip() {
+    const isCreatingSnip = this.props.creatingNew;
+    if (isCreatingSnip) {
+      return <BlankSnip />
+    }
   }
-
-  insertSnipHTML() {
-    const btn = document.querySelector('.new-snip-btn');
-    const blankSnip = this.generateBlankSnipHTML();
-    const snipsList = document.querySelector('.snips-list');
-    snipsList.insertAdjacentHTML('afterbegin', blankSnip)
-  }
-
   
   render() {
-    // const md = '# testing';
     return (
       <section>
         <button
           className="new-snip-btn"
-          onClick={() => this.insertSnipHTML()}>
+          onClick={() => this.props.dispatch(createSnip())}>
           New Snip
         </button>
         <ul className="snips-list">
-          {/* snips need to be dynamically created */}
+          {this.insertBlankSnip()}
         </ul>
-
-        {/* testing md */}
-        {/* <Markdown options={{ forceBlock: true }}>
-          {md}
-        </Markdown> */}
       </section>
     );
   }
@@ -65,8 +36,15 @@ export class Homepage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    snips: state.snipReducer.snips
+    snips: state.snipReducer.snips,
+    creatingNew: state.snipReducer.creatingNew
   }
 };
 
 export default connect(mapStateToProps)(Homepage);
+
+ // now that we have blank notes we need to...
+    // capture the input data
+    // make a post and save the data in the db
+    // upon success display the notes
+      // converted md into html
