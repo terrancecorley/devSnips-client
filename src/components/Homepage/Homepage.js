@@ -4,55 +4,38 @@ import { fetchSnips, postSnip, createSnip } from '../../actions/snips';
 import Markdown from 'markdown-to-jsx';
 import BlankSnip from './BlankSnip/BlankSnip';
 
+export function Snip(props) {
+  return <li key={props.index}>
+              <div class="snip-header">
+                <div>
+                  <h1>{props.title}</h1>
+                </div>
+                <div>
+                  <button>X</button>
+                </div>
+              </div>
+              <div class="snip-body">
+                <textarea name="snip_body">{props.content}</textarea>
+              </div>
+              <div class="snip-footer">
+                <div class="submit-controls">
+                  <button>Done</button>
+                </div>
+              </div>
+            </li>
+}
+
 export class Homepage extends Component {
   
   componentDidMount() {
-    // let snips = null;
-
-    return this.props.dispatch(fetchSnips())
-    // .then(() => snips = this.props.snips)
-    // .then((snips) => {
-
-    // });
-  }
-
-  insertSnips() {
-    let snipsInState = this.props.snips;
-    console.log(snipsInState);
-
-    let snips = snipsInState.map((snip, index) => {
-      return <li key={index}>
-        <div class="snip-header">
-          <div>
-            <h1>{snip.title}</h1>
-          </div>
-          <div>
-            <button>X</button>
-          </div>
-        </div>
-        <div class="snip-body">
-          <textarea name="snip_body">{snip.content}</textarea>
-        </div>
-        <div class="snip-footer">
-          <div class="submit-controls">
-            <button>Done</button>
-          </div>
-        </div>
-      </li>
-    })
-    console.log(snips);
-
-    return [snips];
-  }
-
-  insertBlankSnip() {
-    const isCreatingSnip = this.props.creatingNew;
-    if (isCreatingSnip) {
-      return <BlankSnip />
-    }
+    return this.props.dispatch(fetchSnips());
   }
   
   render() {
+    let snips = this.props.snips.map((snip, index) => {
+      return <Snip index={index} title={snip.title} content={snip.content}/>
+    })
+
     return (
       <section>
         <button
@@ -61,8 +44,8 @@ export class Homepage extends Component {
           New Snip
         </button>
         <ul className="snips-list">
-          {this.insertBlankSnip()}
-          {this.insertSnips()}
+          {this.props.creatingNew ? <BlankSnip /> : ''}
+          {snips}
         </ul>
       </section>
     );
