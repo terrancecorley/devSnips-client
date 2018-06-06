@@ -3,15 +3,13 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { required, checkEmpty, noSpaces, minLength, maxLength } from '../../validators';
 import { reduxForm, Field } from 'redux-form';
-import { registerUser, fetchLogin } from '../../actions/user';
+import { registerUser } from '../../actions/user';
 
 //convert to redux form
 //redirect to homepage on successfull registration
 
 export class SignUp extends Component {
   onSubmit(values){
-    const {username, password} = values;
-
     this.props.dispatch(registerUser(values))
   };
 
@@ -29,6 +27,7 @@ export class SignUp extends Component {
           type="text"
           id="username"
           name="username"
+          validate={[required, checkEmpty, noSpaces, maxLength]}
           />
           <label htmlFor="email">Email</label>
         <Field
@@ -36,6 +35,7 @@ export class SignUp extends Component {
           type="email"
           id="email"
           name="email"
+          validate={[required, checkEmpty, noSpaces, minLength, maxLength]}
           />
         <label htmlFor="password">Password</label>
         <Field
@@ -43,6 +43,7 @@ export class SignUp extends Component {
           type="password"
           id="password"
           name="password"
+          validate={[required, checkEmpty, noSpaces, minLength, maxLength]}
           />
         <button type="submit">Register</button>
         <p>Already have an account?<Link to="/"> Sign in</Link>.</p>

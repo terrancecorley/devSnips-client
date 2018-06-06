@@ -11,7 +11,7 @@ export default function Snip(props) {
                 </div>
               </div>
               <div className="snip-body">
-                <textarea name="snip_body">{props.content}</textarea>
+                <textarea name="snip_body" defaultValue={props.content}></textarea>
               </div>
               <div className="snip-footer">
                 <div className="submit-controls">

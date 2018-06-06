@@ -11,19 +11,13 @@ export class Homepage extends Component {
     return this.props.dispatch(fetchSnips());
   }
 
-  // capture input data as obj {title, content}
-  // send data to db
-  // pull data from db
-  // update db
-  // display data according to db
-  createSnip() {
-    // let newSnip = {
-    //   title,
-    //   content
-    // };
+  createSnip(title, content) {
+    let newSnip = {
+      title,
+      content
+    };
     
-    // return this.props.dispatch(postSnip(newSnips));
-    console.log('THIS RANNNNN')
+    return this.props.dispatch(postSnip(newSnip));
   }
   
   render() {
@@ -39,7 +33,7 @@ export class Homepage extends Component {
           New Snip
         </button>
         <ul className="snips-list">
-          {this.props.creatingNew ? <BlankSnip createSnip={() => this.createSnip()}/> : ''}
+          {this.props.creatingNew ? <BlankSnip createSnip={(title, content) => this.createSnip(title, content)}/> : ''}
           {snips}
         </ul>
       </section>
