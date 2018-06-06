@@ -16,7 +16,6 @@ export class Homepage extends Component {
       title,
       content
     };
-    
     return this.props.dispatch(postSnip(newSnip));
   }
   
