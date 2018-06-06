@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function BlankSnip() {
+export default function BlankSnip(props) {
   return (
     <li>
-      <div class="snip-header">
+      <div className="snip-header">
         <div>
           <input type="text" name="snip_title"></input>
         </div>
@@ -11,12 +11,12 @@ export default function BlankSnip() {
           <button>X</button>
         </div>
       </div>
-      <div class="snip-body">
+      <div className="snip-body">
         <textarea name="snip_body"></textarea>
       </div>
-      <div class="snip-footer">
-        <div class="submit-controls">
-          <button>Done</button>
+      <div className="snip-footer">
+        <div className="submit-controls">
+          <button onClick={() => props.createSnip()}>Done</button>
         </div>
       </div>
     </li>
