@@ -24,12 +24,20 @@ export const updateSnipRequest = () => ({
   loading: true
 }); 
 
+export const DELETE_SNIP_REQUEST = 'DELETE_SNIP_REQUEST';
+export const deleteSnipRequest = () => ({
+  type: DELETE_SNIP_REQUEST,
+  loading: true,
+  deleting: true
+}); 
+
 export const SNIPS_SUCCESS = 'SNIPS_SUCCESS';
 export const snipsSuccess = (snips) => ({
   type: SNIPS_SUCCESS,
   loading: false,
   error: null,
   creatingNew: false,
+  deleting: false,
   snips
 }); 
 
@@ -52,7 +60,7 @@ export const fetchSnips = () => (dispatch) => {
   })
   .then(res => res.json())
   .then(snips => dispatch(snipsSuccess(snips)))
-  .catch(err => dispatch(snipsError));
+  .catch(err => dispatch(snipsError()));
 };
 
 export const postSnip = (snip) => (dispatch) => {
@@ -68,12 +76,12 @@ export const postSnip = (snip) => (dispatch) => {
     body: JSON.stringify({...snip})
   })
   .then(() => dispatch(fetchSnips()))
-  .catch(err => dispatch(snipsError));
+  .catch(err => dispatch(snipsError()));
 };
 
 export const updateSnip = (snip, snipID) => (dispatch) => {
   const token = localStorage.getItem('token');
-  dispatch(postSnipRequest());
+  // dispatch(postSnipRequest());
 
   return fetch(`${API_BASE_URL}/api/snips`, {
     method: 'PUT',
@@ -84,5 +92,21 @@ export const updateSnip = (snip, snipID) => (dispatch) => {
     body: JSON.stringify({...snip})
   })
   .then(() => dispatch(fetchSnips()))
-  .catch(err => dispatch(snipsError));
+  .catch(err => dispatch(snipsError()));
 };
+
+export const deleteSnip = (snipID) => (dispatch) => {
+  const token = localStorage.getItem('token');
+  dispatch(deleteSnipRequest());
+
+  return fetch(`${API_BASE_URL}/api/snips/${snipID}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    }
+  })
+  .then(() => dispatch(snipsSuccess()))
+  .then(() => dispatch(fetchSnips()))
+  .catch(err => dispatch(snipsError()));
+}

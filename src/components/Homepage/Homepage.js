@@ -18,6 +18,10 @@ export class Homepage extends Component {
     };
     return this.props.dispatch(postSnip(newSnip));
   }
+
+  deleteSnip(id) {
+    
+  }
   
   render() {
     let snips = this.props.snips.map((snip, index) => {
@@ -43,7 +47,8 @@ export class Homepage extends Component {
 const mapStateToProps = (state) => {
   return {
     snips: state.snipReducer.snips,
-    creatingNew: state.snipReducer.creatingNew
+    creatingNew: state.snipReducer.creatingNew,
+    deleting: state.snipReducer.deleting
   }
 };
 
