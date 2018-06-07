@@ -55,13 +55,3 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(Homepage);
 
- // now that we have blank notes we need to...
-    // capture the input data
-    // make a post and save the data in the db
-    // upon success display the notes
-      // converted md into html
-
-
-// PRIORITIES
-// view, add snips
-// posting, viewing new snips

@@ -20,7 +20,7 @@ export class Landing extends Component {
     }
 
     return (
-      <form 
+      <form role="form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <label htmlFor="username">Username</label>
         <Field

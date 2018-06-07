@@ -11,7 +11,7 @@ export class HomeHeader extends Component {
     }
 
     return(
-      <header>
+      <header role="banner">
         <div>
           <h1>devSnips</h1>
         </div>
