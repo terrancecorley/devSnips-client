@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSnips, postSnip, createSnip } from '../../actions/snips';
+import { fetchSnips, postSnip, createSnip, deleteSnip } from '../../actions/snips';
 import Markdown from 'markdown-to-jsx';
 import BlankSnip from './BlankSnip/BlankSnip';
 import Snip from './Snip/Snip';
@@ -20,12 +20,13 @@ export class Homepage extends Component {
   }
 
   deleteSnip(id) {
-    
+    console.log('this rannnnnnnnnnnnnn')
+    return this.props.dispatch(deleteSnip(id));
   }
   
   render() {
     let snips = this.props.snips.map((snip, index) => {
-      return <Snip key={index} title={snip.title} content={snip.content}/>
+      return <Snip id={snip.id} key={index} title={snip.title} content={snip.content} deleteSnip={(id) => this.deleteSnip(id)}/>
     })
 
     return (

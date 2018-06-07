@@ -106,7 +106,6 @@ export const deleteSnip = (snipID) => (dispatch) => {
       'Authorization': `Bearer ${token}`,
     }
   })
-  .then(() => dispatch(snipsSuccess()))
   .then(() => dispatch(fetchSnips()))
   .catch(err => dispatch(snipsError()));
 }
