@@ -1,6 +1,9 @@
 import React from 'react';
+import Markdown from 'markdown-to-jsx';
 
 export default function Snip(props) {
+  const snipBody = props.content;
+
   return <li id={props.id} key={props.index}>
               <div className="snip-header">
                 <div>
@@ -13,8 +16,12 @@ export default function Snip(props) {
                   </button>
                 </div>
               </div>
-              <div className="snip-body">
-                <textarea name="snip_body" defaultValue={props.content}></textarea>
+              <div className="snip-body-container">
+                <div className="snip-body">
+                  <Markdown>
+                    {snipBody}
+                  </Markdown>
+                </div>
               </div>
               <div className="snip-footer">
                 <div className="submit-controls">

@@ -8,7 +8,8 @@ export default function BlankSnip(props) {
     <li>
       <div className="snip-header">
         <div>
-          <input type="text" name="snip_title" ref={(input) => titleInput = input}></input>
+          <input type="text" name="snip_title" ref={(input) => titleInput = input}>
+          </input>
         </div>
         <div>
           <button>X</button>

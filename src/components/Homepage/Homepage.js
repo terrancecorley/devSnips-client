@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSnips, postSnip, createSnip, deleteSnip } from '../../actions/snips';
-import Markdown from 'markdown-to-jsx';
 import BlankSnip from './BlankSnip/BlankSnip';
 import Snip from './Snip/Snip';
 
