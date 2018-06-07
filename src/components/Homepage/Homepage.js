@@ -20,7 +20,6 @@ export class Homepage extends Component {
   }
 
   deleteSnip(id) {
-    console.log('this rannnnnnnnnnnnnn')
     return this.props.dispatch(deleteSnip(id));
   }
   
