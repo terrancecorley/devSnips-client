@@ -82,3 +82,18 @@
     padding: 1.4em 12%;
   }
 }
+
+@media (min-width: 64em) {
+  .registration-form {
+    margin: 0.4em auto 0;
+    font-size: 1.7rem;
+    padding: 1.6em 16%;
+  }
+
+  .registration-btn {
+    font-size: 0.9em;
+    width: 8em;
+    align-self: flex-end;
+    margin-top: -0.2em;
+  }
+}

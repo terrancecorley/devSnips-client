@@ -107,3 +107,9 @@ main {
     background-color: rgb(223, 166, 61);
   }
 }
+
+@media (min-width: 64em) {
+  body {
+    background-color: teal;
+  }
+}

@@ -22,3 +22,10 @@
     padding: 1.4em 8%;
   }
 }
+
+@media (min-width: 64em) {
+  .welcome-container {
+    font-size: 1.8rem;
+    padding: 1.4em 12%;
+  }
+}

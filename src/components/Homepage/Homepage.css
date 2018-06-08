@@ -2,7 +2,7 @@
 .snip-section {
   font-size: 1rem;
   margin: 1.5em auto 0;
-  max-width: 45em;
+  max-width: 42em;
 }
 
 .new-snip-btn-container {
@@ -40,5 +40,11 @@
 @media (min-width: 48em) {
   .snip-section {
     font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .snips-list {
+    margin: 0 8%;
   }
 }

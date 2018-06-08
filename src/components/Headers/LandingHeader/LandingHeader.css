@@ -19,3 +19,10 @@
     padding: 1.4em 8%;
   }
 }
+
+@media (min-width: 64em) {
+  .landing-header {
+    font-size: 1.8rem;
+    padding: 1.6em 10%;
+  }
+}
