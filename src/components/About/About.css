@@ -1,0 +1,10 @@
+
+.welcome-container {
+  background: #21201D;
+  font-size: 1.1em;
+  padding: 0.6em 0.8em;
+  color: #BBCEA8;
+  border-radius: 0.4em;
+  margin: 0 auto;
+  max-width: 30em;
+}
