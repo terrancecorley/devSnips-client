@@ -1,16 +1,17 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
+import './Snip.css';
 
 export default function Snip(props) {
   const snipBody = props.content;
 
-  return <li id={props.id} key={props.index}>
+  return <li className="snip" id={props.id} key={props.index}>
               <div className="snip-header">
-                <div>
-                  <h1>{props.title}</h1>
+                <div className="snip-title-container">
+                  <h1 className="snip-title">{props.title}</h1>
                 </div>
-                <div>
-                  <button onClick={() => {
+                <div className="delete-snip-btn-container">
+                  <button className="delete-snip-btn" onClick={() => {
                     props.deleteSnip(props.id)}
                   }>X
                   </button>

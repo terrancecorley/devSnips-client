@@ -34,7 +34,7 @@ export class Homepage extends Component {
           <button
             className="new-snip-btn"
             onClick={() => this.props.dispatch(createSnip())}>
-            New Snip
+            &#43; New Snip
           </button>
         </div>
         <ul className="snips-list">

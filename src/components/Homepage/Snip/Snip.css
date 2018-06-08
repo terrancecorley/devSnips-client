@@ -1,0 +1,47 @@
+
+.snip {
+  background-color: #21201D;
+  color: #BBCEA8;
+  margin-bottom: 1em;
+}
+
+.snip-header {
+  display: flex;
+}
+
+.snip-title-container {
+  padding: 0.4em 0.6em;
+}
+
+.snip-title {
+  margin: 0;
+  color: #fdfdfd;
+  font-size: 1.75em;
+}
+
+.delete-snip-btn-container {
+  margin-left: auto;
+}
+
+.delete-snip-btn {
+  color: #fdfdfd;
+  font-size: 0.8em;
+  background-color: #FF6B6C;
+  padding: 0.4em 0.6em;
+  border: 1px solid #FF6B6C;
+  border-radius: 0.2em; 
+  border-top-right-radius: 0;
+  transition: 
+    background-color 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+}
+
+.delete-snip-btn:hover,
+.delete-snip-btn:focus {
+  background-color: #ca1c1c;
+  border: 1px solid #ca1c1c;
+}
+
+.snip code {
+  color: #FFC145;  
+}

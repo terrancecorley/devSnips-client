@@ -17,9 +17,16 @@
   border: none;
   border-radius: 0.2em; 
   transition: background-color 0.2s ease-in-out;
+  margin-bottom: 1.5em;
 }
 
 .new-snip-btn:hover,
 .new-snip-btn:focus {
   background-color: #086788;
+}
+
+.snips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 4%;
 }
