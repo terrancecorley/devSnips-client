@@ -11,7 +11,7 @@ export default function Snip(props) {
                   <h1 className="snip-title">{props.title}</h1>
                 </div>
                 <div className="delete-snip-btn-container">
-                  <button className="delete-snip-btn" onClick={() => {
+                  <button className="delete-snip-btn" aria-label="Close" onClick={() => {
                     props.deleteSnip(props.id)}
                   }>X
                   </button>
