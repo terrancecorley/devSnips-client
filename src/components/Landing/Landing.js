@@ -5,6 +5,7 @@ import { required, checkEmpty } from '../../validators';
 import { reduxForm, Field } from 'redux-form';
 import { Redirect } from 'react-router-dom';
 import { fetchLogin } from '../../actions/user';
+import './Landing.css';
 
 export class Landing extends Component {
 

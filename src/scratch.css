@@ -1,0 +1,66 @@
+/* FONTS */
+link href="https://fonts.googleapis.com/css?family=Dosis:700|Fredoka+One|Montserrat:400,400i,500,500i,600,600i,700,700i|Inconsolata:400,700" rel="stylesheet"
+
+/* logo */
+dosis, fredoka one
+
+/* snip title, snip text, body in general */
+montserrat
+
+/* code */
+incosolata
+
+
+
+
+
+
+
+/* COLOR SCHEME */
+
+/* logo */
+.letter-1,
+.letter-6 {
+  color: #06AED5;
+}
+
+.letter-2,
+.letter-7{
+  color: #086788;
+}
+
+.letter-3,
+.letter-8 {
+  color: #160F29;
+}
+
+.letter-4 {
+  color: #380036;
+}
+
+.letter-5 {
+  color: #361134;
+}
+
+/* snips */
+div {
+  width: 800px;
+  margin: 2em auto 0;
+  padding: 0.8em;
+  background-color: #21201D; 
+  color: #BBCEA8;
+}
+
+.title {
+  color: #fff;
+}
+
+code {
+  color: #FFC145;
+}
+
+X button {
+  color: #FF6B6C;
+}
+
+/* FAVICON? */

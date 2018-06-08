@@ -1,5 +1,30 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 1em;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fdfdfd;
+}
+
+a {
+  text-decoration: none;
+  color: #086788;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #380036;
 }
