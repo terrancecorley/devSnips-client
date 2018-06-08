@@ -8,10 +8,12 @@ Before registering for the application it is recommended you know the basics of 
 You can view the application [here](https://trusting-hodgkin-3af2bc.netlify.com/).
 
 ## Screenshots
-Login page:
+Login page:  
+
 ![image](https://vwho9g.by.files.1drv.com/y4mMV17MEzJscGboy-5Hzd8fx57kwxBHZpsk1kToxstsx1qCWjpoPVdXgEZrXLRWB6ceK5V9VS1o8DHqp6wf-lIdBYq_c7uyclV1Xvm2U8WkQBBBb4IXwF3QmMPAPF1bvr0nrVV2HYleCohfyENUJ8f-VyB9BG5Hvdj36xS8EKVfrGoTHjyqARv4PiBndgOd_YUNaxY9K-DGP1ca-3szgc4eg?width=660&height=351&cropmode=none)  
 
-Registration page:
+Registration page:  
+
 ![image](https://vgho9g.by.files.1drv.com/y4mCrMgkBzGCfGCGiTi1CjefcEDHhBntXQGmGOSqDdHGVQqCQHbOOVljYnssD2TRfUdghkxe95Z0Cnxm1xNcgn_8KOmH24p_7lXy5lKVzNeY3YqVRmMYT9WZqEObf8avct5PaNenXaKKg6egium0QOUHMRFXmpk4bVvfcQYDXsZw2rJHLquhm5Mrm0XOE26_th4MugFZaG_Bq0OwcxFstW3BQ?width=660&height=351&cropmode=none)
 
 ### Tech Stack
