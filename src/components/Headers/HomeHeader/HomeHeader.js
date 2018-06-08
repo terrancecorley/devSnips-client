@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import { logout } from '../../../actions/user';
+import './HomeHeader.css';
 
 export class HomeHeader extends Component {
   
@@ -11,14 +12,18 @@ export class HomeHeader extends Component {
     }
 
     return(
-      <header role="banner">
-        <div>
-          <h1>devSnips</h1>
-        </div>
-        <div>
-          <p><Link to="/about">About</Link></p>
-          <button onClick={() => this.props.dispatch(logout())}>Sign Out</button>
-        </div>
+      <header role="banner" className="homepage-header">
+          <h1 className="logo homepage-logo">
+            <span className="logo-d">d</span>
+            <span className="logo-e">e</span>
+            <span className="logo-v">v</span>
+            <span className="logo-S">S</span>
+            <span className="logo-n">n</span>
+            <span className="logo-i">i</span>
+            <span className="logo-p">p</span>
+            <span className="logo-s">s</span>
+          </h1>
+          <button className="sign-out-btn" onClick={() => this.props.dispatch(logout())}>Sign Out</button>
       </header>
     );
   }

@@ -1,0 +1,29 @@
+
+.homepage-header {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2em 4%;
+  font-size: 1.6rem;
+}
+
+.homepage-logo {
+  order: 2;
+  text-align: center;
+  margin-top: 1.4em;
+}
+
+.sign-out-btn {
+  align-self: flex-end;
+  font-size: 0.6em;
+  color: #fdfdfd;
+  background-color: #FF6B6C;
+  padding: 0.4em 0.6em;
+  border: none;
+  border-radius: 0.2em; 
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sign-out-btn:hover,
+.sign-out-btn:focus {
+  background-color: #ca1c1c;
+}
