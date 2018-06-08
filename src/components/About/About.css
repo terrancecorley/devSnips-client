@@ -8,3 +8,10 @@
   margin: 0 auto;
   max-width: 30em;
 }
+
+@media (min-width: 40em) {
+  .welcome-container {
+    font-size: 1.4rem;
+    padding: 1.4em 6%;
+  }
+}

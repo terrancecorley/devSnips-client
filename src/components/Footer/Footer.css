@@ -6,3 +6,9 @@
 .copyright-text {
   text-align: center;
 }
+
+@media (min-width: 40em) {
+  .main-footer {
+    font-size: 1rem;
+  }
+}

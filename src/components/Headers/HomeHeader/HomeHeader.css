@@ -28,3 +28,14 @@
 .sign-out-btn:focus {
   background-color: #ca1c1c;
 }
+
+@media (min-width: 40em) {
+  .homepage-header {
+    font-size: 2rem;
+    padding: 1.4em 6%;
+  }
+
+  .homepage-logo {
+    font-size: 2.5em;
+  }
+}

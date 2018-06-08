@@ -24,6 +24,10 @@ main {
   min-height: calc(100vh - 17.5em);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
   color: #06AED5;
@@ -89,5 +93,11 @@ main {
 @media (min-width: 320px) {
   body {
     background-color: #ccc;
+  }
+}
+
+@media (min-width: 40em) {
+  body {
+    background: lightblue;
   }
 }

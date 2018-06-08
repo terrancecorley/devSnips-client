@@ -5,3 +5,10 @@
   padding: 1em 4%;
   text-align: right; 
 }
+
+@media (min-width: 40em) {
+  .about-header {
+    font-size: 1.5rem;
+    padding: 1.4em 6%;
+  }
+}

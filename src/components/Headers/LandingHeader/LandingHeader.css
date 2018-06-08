@@ -1,7 +1,14 @@
 
 .landing-header {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 700;
   padding: 1em 4%;
   text-align: right; 
+}
+
+@media (min-width: 40em) {
+  .landing-header {
+    font-size: 1.5rem;
+    padding: 1.4em 6%;
+  }
 }

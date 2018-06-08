@@ -4,3 +4,10 @@
   font-size: 1.6rem;
   padding: 1.2em;
 }
+
+@media (min-width: 40em) {
+  .banner-logo {
+    font-size: 2rem;
+    padding: 1.4em 6%;
+  }
+}
