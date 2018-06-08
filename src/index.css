@@ -20,6 +20,10 @@ body {
   color: #21201D;
 }
 
+main {
+  min-height: calc(100vh - 17.5em);
+}
+
 a {
   text-decoration: none;
   color: #06AED5;
