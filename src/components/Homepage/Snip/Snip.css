@@ -10,7 +10,7 @@
 }
 
 .snip-title-container {
-  padding: 0.4em 0.6em;
+  padding: 0.6em 0.8em;
 }
 
 .snip-title {
@@ -42,6 +42,12 @@
   border: 1px solid #ca1c1c;
 }
 
+.snip-body-container {
+  padding: 0 0.8em;
+  font-size: 1.1em;
+}
+
 .snip code {
-  color: #FFC145;  
+  color: #FFC145; 
+  font-size: 0.875em; 
 }
