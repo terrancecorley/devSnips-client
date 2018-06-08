@@ -23,8 +23,8 @@ export default function Snip(props) {
                 </Markdown>
               </div>
               <div className="snip-footer">
-                <div className="submit-controls">
-                  <button>Done
+                <div className="snip-submit-controls">
+                  <button className="snip-submit-btn">Edit
                   </button>
                 </div>
               </div>

@@ -51,3 +51,31 @@
   color: #FFC145; 
   font-size: 0.875em; 
 }
+
+.snip-footer {
+  padding: 0.6em 0.8em;
+}
+
+.snip-submit-controls {
+  text-align: right;
+  margin-right: 0.4em;
+}
+
+.snip-submit-btn {
+  color: #fdfdfd;
+  font-size: 0.8em;
+  background-color: #06AED5;
+  padding: 0.2em 0.6em;
+  border: 1px solid #06AED5;
+  border-radius: 0.2em; 
+  transition: 
+    background-color 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+}
+
+.snip-submit-btn:hover,
+.snip-submit-btn:focus {
+  background-color: #086788;
+  border: 1px solid #086788;
+}
+
