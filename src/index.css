@@ -89,27 +89,3 @@ header a {
 main {
   margin: 0 4%;
 }
-
-@media (min-width: 320px) {
-  body {
-    background-color: #ccc;
-  }
-}
-
-@media (min-width: 40em) {
-  body {
-    background: lightblue;
-  }
-}
-
-@media (min-width: 48em) {
-  body {
-    background-color: rgb(223, 166, 61);
-  }
-}
-
-@media (min-width: 64em) {
-  body {
-    background-color: teal;
-  }
-}

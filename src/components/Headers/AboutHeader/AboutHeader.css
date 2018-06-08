@@ -12,3 +12,24 @@
     padding: 1.4em 6%;
   }
 }
+
+@media (min-width: 48em) {
+  .about-header {
+    font-size: 1.7rem;
+    padding: 1.4em 8%;
+  }
+}
+
+@media (min-width: 64em) {
+  .about-header {
+    font-size: 1.8rem;
+    padding: 1.6em 10%;
+  }
+}
+
+@media (min-width: 94em) {
+  .about-header {
+    font-size: 2rem;
+    padding: 1.6em 12%;
+  }
+}

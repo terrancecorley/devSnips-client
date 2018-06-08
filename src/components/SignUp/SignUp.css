@@ -97,3 +97,14 @@
     margin-top: -0.2em;
   }
 }
+
+@media (min-width: 94em) {
+  .registration-form {
+    margin: 0.2em auto 0;
+    font-size: 1.8rem;
+  }
+
+  .registration-btn {
+    width: 7em;
+  }
+}

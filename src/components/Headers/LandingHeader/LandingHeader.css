@@ -26,3 +26,10 @@
     padding: 1.6em 10%;
   }
 }
+
+@media (min-width: 94em) {
+  .landing-header {
+    font-size: 2rem;
+    padding: 1.6em 12%;
+  }
+}
