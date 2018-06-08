@@ -1,29 +1,27 @@
-
-.snip {
+.new-snip {
   background-color: #21201D;
-  color: #BBCEA8;
   margin-bottom: 3.5em;
 }
 
-.snip-header {
+.new-snip-header {
   display: flex;
 }
 
-.snip-title-container {
+.new-snip-title-container {
   padding: 0.6em 0.8em;
+  width: 75%;
 }
 
-.snip-title {
+.new-snip-title {
   margin: 0;
-  color: #fdfdfd;
-  font-size: 1.75em;
+  width: 100%;
 }
 
-.delete-snip-btn-container {
+.new-delete-snip-btn-container {
   margin-left: auto;
 }
 
-.delete-snip-btn {
+.new-delete-snip-btn {
   color: #fdfdfd;
   font-size: 0.8em;
   background-color: #FF6B6C;
@@ -36,33 +34,32 @@
     border 0.2s ease-in-out;
 }
 
-.delete-snip-btn:hover,
-.delete-snip-btn:focus {
+.new-delete-snip-btn:hover,
+.new-delete-snip-btn:focus {
   background-color: #ca1c1c;
   border: 1px solid #ca1c1c;
 }
 
-.snip-body-container {
+.new-snip-body-container {
   padding: 0 0.8em;
   font-size: 1.1em;
 }
 
-.snip code {
-  color: #FFC145; 
-  font-size: 0.875em; 
-  font-family: 'Inconsolata', sans-serif;
+.new-snip-body {
+  width: 100%;
+  height: 15em;
 }
 
-.snip-footer {
+.new-snip-footer {
   padding: 0.6em 0.8em;
 }
 
-.snip-submit-controls {
+.new-snip-submit-controls {
   text-align: right;
   margin-right: 0.4em;
 }
 
-.snip-submit-btn {
+.new-snip-submit-btn {
   color: #fdfdfd;
   font-size: 0.8em;
   background-color: #06AED5;
@@ -74,9 +71,13 @@
     border 0.2s ease-in-out;
 }
 
-.snip-submit-btn:hover,
-.snip-submit-btn:focus {
+.new-snip-submit-btn:hover,
+.new-snip-submit-btn:focus {
   background-color: #086788;
   border: 1px solid #086788;
 }
 
+.new-snip-title,
+.new-snip-body {
+  padding: 0.4em 0.6em;
+}

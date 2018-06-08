@@ -57,7 +57,7 @@ export class SignUp extends Component {
           name="password"
           validate={[required, checkEmpty, noSpaces, minLength, maxLength]}
           />
-        <button type="submit" className="registration-btn">Register</button>
+        <button type="submit" className="registration-btn">Sign Up</button>
         <p>Already have an account?<Link to="/"> Sign in</Link>.</p>
      </form>
     );
