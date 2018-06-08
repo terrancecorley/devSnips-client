@@ -17,15 +17,32 @@ body {
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
   background-color: #fdfdfd;
+  color: #21201D;
 }
 
 a {
   text-decoration: none;
-  color: #086788;
+  color: #06AED5;
   transition: color 0.2s ease-in-out;
+  font-weight: 600;
 }
 
 a:hover,
 a:focus {
-  color: #380036;
+  color: #086788;
+}
+
+header a {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+main {
+  margin: 0 4%;
+}
+
+@media (min-width: 320px) {
+  body {
+    background-color: #ccc;
+  }
 }

@@ -21,25 +21,29 @@ export class Landing extends Component {
     }
 
     return (
-      <form role="form"
+      <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        <label htmlFor="username">Username</label>
+        <label className="login-label" htmlFor="username">Username</label>
         <Field
+          className="login-input"
           component="input"
           type="text"
           id="username"
           name="username"
           validate={[required, checkEmpty]}
+          placeholder="Enter a username"
          />
-        <label htmlFor="password">Password</label>
+        <label className="login-label" htmlFor="password">Password</label>
         <Field
+          className="login-input"
           component="input"
           type="password"
           id="password"
           name="password"
           validate={[required, checkEmpty]}
+          placeholder="Enter a password"
          />
-         <button type="submit">Log In</button>
+         <button className="login-btn" type="submit">Log In</button>
          <p>Click <Link to="/signup">here</Link> to create an account.</p>
       </form>
     );
