@@ -5,6 +5,12 @@ devSnips is a free web-based note-taking application which allows users to creat
 Before registering for the application it is recommended you know the basics of [markdown](https://guides.github.com/features/mastering-markdown/).
 
 ## Site Link
+There is currently an **issue** with the error handling on the login and registration forms. For now you may use a demo account to login and view the functionality of the app.  
+
+Username: user1  
+
+Password: testtesttest  
+
 You can view the application [here](https://trusting-hodgkin-3af2bc.netlify.com/).
 
 ## Screenshots
