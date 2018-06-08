@@ -36,3 +36,9 @@
     font-size: 1.4rem;
   }
 }
+
+@media (min-width: 48em) {
+  .snip-section {
+    font-size: 1.6rem;
+  }
+}

@@ -39,3 +39,14 @@
     font-size: 2.5em;
   }
 }
+
+@media (min-width: 48em) {
+  .homepage-header {
+    font-size: 2.2rem;
+    padding: 1.4em 8%;
+  }
+
+  .homepage-logo {
+    font-size: 2.7em;
+  }
+}

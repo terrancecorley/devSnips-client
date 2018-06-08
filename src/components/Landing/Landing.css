@@ -4,7 +4,7 @@
   flex-direction: column;
   margin: 1.5em auto 0;
   padding: 0 4%;
-  max-width: 38em;
+  max-width: 35em;
   font-size: 1.2rem;
 }
 
@@ -73,5 +73,12 @@
   .login-form {
     font-size: 1.4rem;
     padding: 1.4em 6%;
+  }
+}
+
+@media (min-width: 48em) {
+  .login-form {
+    font-size: 1.6rem;
+    padding: 1.4em 12%;
   }
 }

@@ -75,3 +75,10 @@
     padding: 1.4em 6%;
   }
 }
+
+@media (min-width: 48em) {
+  .registration-form {
+    font-size: 1.6rem;
+    padding: 1.4em 12%;
+  }
+}

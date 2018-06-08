@@ -11,3 +11,10 @@
     padding: 1.4em 6%;
   }
 }
+
+@media (min-width: 48em) {
+  .banner-logo {
+    font-size: 2.4rem;
+    padding: 1.4em 8%;
+  }
+}

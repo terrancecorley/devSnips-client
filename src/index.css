@@ -101,3 +101,9 @@ main {
     background: lightblue;
   }
 }
+
+@media (min-width: 48em) {
+  body {
+    background-color: rgb(223, 166, 61);
+  }
+}
