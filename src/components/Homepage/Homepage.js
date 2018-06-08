@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchSnips, postSnip, createSnip, deleteSnip } from '../../actions/snips';
 import BlankSnip from './BlankSnip/BlankSnip';
 import Snip from './Snip/Snip';
+import './Homepage.css';
 
 export class Homepage extends Component {
   
@@ -28,12 +29,14 @@ export class Homepage extends Component {
     })
 
     return (
-      <section>
-        <button
-          className="new-snip-btn"
-          onClick={() => this.props.dispatch(createSnip())}>
-          New Snip
-        </button>
+      <section className="snip-section">
+        <div className="new-snip-btn-container">
+          <button
+            className="new-snip-btn"
+            onClick={() => this.props.dispatch(createSnip())}>
+            New Snip
+          </button>
+        </div>
         <ul className="snips-list">
           {this.props.creatingNew ? <BlankSnip createSnip={(title, content) => this.createSnip(title, content)}/> : ''}
           {snips}

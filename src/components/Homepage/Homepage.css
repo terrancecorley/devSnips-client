@@ -1,0 +1,25 @@
+
+.snip-section {
+  font-size: 1rem;
+  margin: 1.5em auto 0;
+  max-width: 58em;
+}
+
+.new-snip-btn-container {
+  text-align: right;
+}
+
+.new-snip-btn {
+  font-size: 1em;
+  color: #fdfdfd;
+  background-color: #06AED5;
+  padding: 0.4em 0.6em;
+  border: none;
+  border-radius: 0.2em; 
+  transition: background-color 0.2s ease-in-out;
+}
+
+.new-snip-btn:hover,
+.new-snip-btn:focus {
+  background-color: #086788;
+}
