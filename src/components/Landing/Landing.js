@@ -20,9 +20,20 @@ export class Landing extends Component {
       return <Redirect to="/homepage" />;
     }
 
+    let message;
+
+    if (this.props.error) {
+      message = 'Auth Error';
+    }
+
     return (
       <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <span>
+          {this.props.error ? 'Authorization Error' : ''}
+          {console.log(this.props.error)}
+          {message}
+        </span>
         <label className="login-label" htmlFor="username">Username</label>
         <Field
           className="login-input"
@@ -52,7 +63,8 @@ export class Landing extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn: state.userReducer.loggedIn
+    loggedIn: state.userReducer.loggedIn,
+    error: state.userReducer.error
   };
 };
 
