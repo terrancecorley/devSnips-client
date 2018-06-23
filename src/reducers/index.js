@@ -5,9 +5,9 @@ import snipReducer from './snips';
 
 const rootReducer = combineReducers(
 	{
-    form: formReducer,
     userReducer,
-    snipReducer
+    snipReducer,
+    form: formReducer
 	}
 );
 

@@ -20,16 +20,18 @@ export class Landing extends Component {
       return <Redirect to="/homepage" />;
     }
 
-    console.log('render check', this.props.error);
+    let errMsg;
+    if (this.props.errorMsg) {
+      errMsg = (<p>{this.props.errorMsg}</p>)
+    }
+
+    console.log('error', this.props.errorMsg);
 
     return (
       <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <div>
-          <p>
-            {console.log('return check', this.props.error)}
-            {this.props.error ? this.props.error : ''}
-          </p>
+          {errMsg}
         </div>
         <label className="login-label" htmlFor="username">Username</label>
         <Field
@@ -58,12 +60,10 @@ export class Landing extends Component {
   };
 };
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
     loggedIn: state.userReducer.loggedIn,
-    error: state.userReducer.error
-  };
-};
+    errorMsg: state.userReducer.error
+});
 
 export default connect(mapStateToProps)(reduxForm({
   form: 'loginForm'

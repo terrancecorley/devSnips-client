@@ -16,9 +16,17 @@ export class SignUp extends Component {
       return <Redirect to="/homepage" />
     }
 
+    let errMsg;
+    if (this.props.error) {
+      errMsg = (<p>{this.props.error}</p>)
+    }
+
+    console.log('error', this.props.error);
+
     return (
       <form role="form" className="registration-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        {errMsg}
         <label 
           htmlFor="username"
           className="registration-label">
@@ -64,11 +72,10 @@ export class SignUp extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    loggedIn: state.userReducer.loggedIn
-  };
-};
+const mapStateToProps = (state) => ({
+    loggedIn: state.userReducer.loggedIn,
+    error: state.userReducer.error
+  });
 
 export default connect(mapStateToProps)(reduxForm({
   form: 'registrationForm'
