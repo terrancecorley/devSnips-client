@@ -20,12 +20,14 @@ export class Landing extends Component {
       return <Redirect to="/homepage" />;
     }
 
+    console.log('render check', this.props.error);
+
     return (
       <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <div>
           <p>
-            {console.log(this.props.error)}
+            {console.log('return check', this.props.error)}
             {this.props.error ? this.props.error : ''}
           </p>
         </div>
