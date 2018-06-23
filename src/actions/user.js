@@ -82,7 +82,7 @@ export const fetchLogin = (username, password) => (dispatch) => {
   })
   .then((res) => {
     if (res.status !== 200) {
-      const errMessage = new Error('Authorization Error');
+      const errMessage = 'Authorization Error';
       throw errMessage; 
     }
     return res.json();

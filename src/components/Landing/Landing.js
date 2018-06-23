@@ -20,20 +20,15 @@ export class Landing extends Component {
       return <Redirect to="/homepage" />;
     }
 
-    let message;
-
-    if (this.props.error) {
-      message = 'Auth Error';
-    }
-
     return (
       <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        <span>
-          {this.props.error ? 'Authorization Error' : ''}
-          {console.log(this.props.error)}
-          {message}
-        </span>
+        <div>
+          <p>
+            {console.log(this.props.error)}
+            {this.props.error ? this.props.error : ''}
+          </p>
+        </div>
         <label className="login-label" htmlFor="username">Username</label>
         <Field
           className="login-input"
