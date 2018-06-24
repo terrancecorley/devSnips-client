@@ -22,10 +22,8 @@ export class Landing extends Component {
 
     let errMsg;
     if (this.props.errorMsg) {
-      errMsg = (<p>{this.props.errorMsg}</p>)
+      errMsg = (<p className="login-err-msg">{this.props.errorMsg}</p>)
     }
-
-    console.log('error', this.props.errorMsg);
 
     return (
       <form role="form" className="login-form"
