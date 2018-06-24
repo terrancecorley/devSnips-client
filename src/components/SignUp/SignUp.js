@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { required, checkEmpty, noSpaces, minLength, maxLength } from '../../validators';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm, Field, focus } from 'redux-form';
 import { registerUser } from '../../actions/user';
 import './SignUp.css';
+import Input from '../Input/Input';
 
 export class SignUp extends Component {
-  onSubmit(values){
+  onSubmit(values) {
     this.props.dispatch(registerUser(values))
   };
 
@@ -15,54 +16,45 @@ export class SignUp extends Component {
     if (this.props.loggedIn === true) {
       return <Redirect to="/homepage" />
     }
-  
-    console.log(this.props.regErr)
 
-    let obj = {
-      reallyTesting: {
-        testing: {
-          thiz: 'out'
-        }
-      }
-    }
-    console.log(obj)
+    let error;
+    if (this.props.error) {
+      error = (
+        <label className='validation-error'>
+            {this.props.error}
+        </label>
+      ) 
+    };
 
     return (
       <form role="form" className="registration-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        <label 
-          htmlFor="username"
-          className="registration-label">
-          Username
-        </label>
+        {error}
         <Field
+          label="Username"
           placeholder="Enter a username"
           className="registration-input"
-          component="input"
+          component={Input}
           type="text"
           id="username"
           name="username"
           validate={[required, checkEmpty, noSpaces, maxLength]}
           />
-        <label htmlFor="email" className="registration-label">Email</label>
         <Field
+          label="Email"
           placeholder="Enter your email"
           className="registration-input"
-          component="input"
+          component={Input}
           type="email"
           id="email"
           name="email"
           validate={[required, checkEmpty, noSpaces, minLength, maxLength]}
           />
-        <label 
-          htmlFor="password"
-          className="registration-label">
-          Password
-        </label>
         <Field
+          label="Password"
           placeholder="Enter a password"
           className="registration-input"
-          component="input"
+          component={Input}
           type="password"
           id="password"
           name="password"
@@ -80,5 +72,8 @@ const mapStateToProps = (state) => ({
   });
 
 export default connect(mapStateToProps)(reduxForm({
-  form: 'registrationForm'
+  form: 'registrationForm',
+  onSubmitFail: (errors, dispatch) => {
+    return dispatch(focus('registrationForm', 'username'));
+  }
 })(SignUp));

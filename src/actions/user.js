@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { SubmissionError } from 'redux-form';
 
 
 export const SET_TOKEN = 'SET_TOKEN';
@@ -93,7 +94,7 @@ export const fetchLogin = (username, password) => (dispatch) => {
 };
 
 export const registerUser = (user) => (dispatch) => {
-  dispatch(fetchLoginRequest());
+  dispatch(fetchRegisterRequest());
   return fetch(`${API_BASE_URL}/api/users`, {
     method : 'POST',
     headers : {
@@ -104,9 +105,29 @@ export const registerUser = (user) => (dispatch) => {
   .then(res => res.json())
   .then(() => {
     dispatch(fetchRegisterSuccess());
-    return dispatch(fetchLogin(user.username, user.password));
+    dispatch(fetchLogin(user.username, user.password));
   })
-  .catch(err => dispatch(fetchRegisterError(err)));
+  .catch(err => {
+    let {message} = err;
+    const {reason} = err.error;
+
+    if(message === 'The username already exists'){
+        message = 'The username already exists';
+    }
+
+    if(reason !== 'ValidationError'){
+        message = 'Unable to sign up, please try again later';
+    }
+
+    dispatch(fetchRegisterError(message));
+    if(reason === 'ValidationError'){
+        return Promise.reject(
+            new SubmissionError({
+                _error: message
+            })
+        )
+    }
+  })
 };
 
 

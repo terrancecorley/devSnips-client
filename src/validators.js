@@ -6,6 +6,7 @@ export const required = (value) =>
 export const checkEmpty = (value) =>
   value.trim() === '' ? 'Field must not be empty' : null;
 
+// Value can't contain whitespace 
 export const noSpaces = (value) =>
   value.trim().length === value.length ? null : 'May not lead or end with spaces';
 
