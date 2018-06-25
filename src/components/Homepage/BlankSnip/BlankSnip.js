@@ -13,7 +13,7 @@ export default function BlankSnip(props) {
           </input>
         </div>
         <div className="new-delete-snip-btn-container">
-          <button className="new-delete-snip-btn">X</button>
+          <button className="new-delete-snip-btn" aria-label="Close">X</button>
         </div>
       </div>
       <div className="new-snip-body-container">

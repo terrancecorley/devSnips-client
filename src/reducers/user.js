@@ -24,39 +24,33 @@ const userReducer = (state = initialState, action) => {
         ...state,
         token: action.token
       }
-      break;
     case REMOVE_TOKEN:
       return {
         ...state,
         token: action.token
       }
-      break;
     case USER_REGISTER_REQUEST:
       return {
         ...state,
         loading: action.loading
       }
-      break;
     case USER_REGISTER_SUCCESS:
       return {
         ...state,
         loading: action.loading,
         error: action.error
-      }
-      break; 
+      } 
     case USER_REGISTER_ERROR:
       return {
         ...state,
         loading: action.loading,
         error: action.error
       }
-      break;
     case USER_LOGIN_REQUEST:
       return {
         ...state,
         loading: action.loading
       }
-      break;
     case USER_LOGIN_SUCCESS:
       return {
         ...state,
@@ -64,7 +58,6 @@ const userReducer = (state = initialState, action) => {
         loggedIn: action.loggedIn,
         error: action.error
       }
-      break;
     case USER_LOGIN_ERROR:
       return {
         ...state,
@@ -72,7 +65,6 @@ const userReducer = (state = initialState, action) => {
         loggedIn: action.loggedIn,
         error: action.error
       }
-      break;
     case LOGOUT:
       return {
         ...state,
@@ -81,7 +73,7 @@ const userReducer = (state = initialState, action) => {
       }   
     default: 
       return state;
-  };
+  }
 };
 
 export default userReducer;

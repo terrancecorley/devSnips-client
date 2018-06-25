@@ -23,26 +23,22 @@ const snipReducer = (state=initialState, action) => {
         ...state,
         loading: action.loading
       }
-      break;
     case CREATE_SNIP:
       return {
         ...state,
         creatingNew: action.creatingNew
       }
-      break;
     case POST_SNIP_REQUEST:
       return {
         ...state,
         loading: action.loading
       }
-      break;
     case DELETE_SNIP_REQUEST:
       return {
         ...state,
         loading: action.loading,
         deleting: action.deleting
       }
-      break;
     case SNIPS_SUCCESS:
       return {
         ...state,
@@ -51,14 +47,12 @@ const snipReducer = (state=initialState, action) => {
         creatingNew: action.creatingNew,
         deleting: action.deleting
       }
-      break;
     case SNIPS_ERROR:
       return {
         ...state,
         loading: action.loading,
         error: action.error
       }
-      break;
     default:
       return state;
   }

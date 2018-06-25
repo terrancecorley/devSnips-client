@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { SubmissionError } from 'redux-form';
 
 
 export const SET_TOKEN = 'SET_TOKEN';
@@ -82,7 +83,7 @@ export const fetchLogin = (username, password) => (dispatch) => {
   })
   .then((res) => {
     if (res.status !== 200) {
-      const errMessage = new Error('Authorization Error');
+      const errMessage = 'Authorization Error';
       throw errMessage; 
     }
     return res.json();
@@ -93,20 +94,29 @@ export const fetchLogin = (username, password) => (dispatch) => {
 };
 
 export const registerUser = (user) => (dispatch) => {
-  dispatch(fetchLoginRequest());
+  dispatch(fetchRegisterRequest());
   return fetch(`${API_BASE_URL}/api/users`, {
-    method : 'POST',
-    headers : {
+    method: 'POST',
+    headers: {
       'content-type' : 'application/json'
     },
-    body : JSON.stringify(user)
+    body: JSON.stringify(user)
   })
-  .then(res => res.json())
+  .then((res) => {
+    if (res.status !== 200) {
+      const errMsg = 'Username or Email already exists'
+      throw errMsg;
+    }
+    return res.json();
+    // return Promise.reject({ code: res.status, message: res.statusText });
+  })
   .then(() => {
     dispatch(fetchRegisterSuccess());
-    return dispatch(fetchLogin(user.username, user.password));
+    dispatch(fetchLogin(user.username, user.password));
   })
-  .catch(err => dispatch(fetchRegisterError(err)));
+  .catch(err => {
+    dispatch(fetchRegisterError(err));
+  })
 };
 
 

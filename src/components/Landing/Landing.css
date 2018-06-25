@@ -8,6 +8,12 @@
   font-size: 1.2rem;
 }
 
+.login-err-msg {
+  color: red;
+  font-weight: bold;
+  margin: 0;
+}
+
 .login-label {
   align-self: center;
   text-transform: uppercase;
