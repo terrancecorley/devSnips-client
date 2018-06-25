@@ -13,7 +13,7 @@ Password: testtesttest
 
 Alternatively, you can create an account, but make sure your email and password are at least 10 characters. This issue is actively being worked on and will be reolved soon.  
 
-You can view the application [here](https://trusting-hodgkin-3af2bc.netlify.com/).
+You can view the application [here](https://devSnips.netlify.com/).
 
 ## Screenshots
 Login page:  
