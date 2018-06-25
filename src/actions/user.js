@@ -96,37 +96,26 @@ export const fetchLogin = (username, password) => (dispatch) => {
 export const registerUser = (user) => (dispatch) => {
   dispatch(fetchRegisterRequest());
   return fetch(`${API_BASE_URL}/api/users`, {
-    method : 'POST',
-    headers : {
+    method: 'POST',
+    headers: {
       'content-type' : 'application/json'
     },
-    body : JSON.stringify(user)
+    body: JSON.stringify(user)
   })
-  .then(res => res.json())
+  .then((res) => {
+    if (res.status !== 200) {
+      const errMsg = 'Username or Email already exists'
+      throw errMsg;
+    }
+    return res.json();
+    // return Promise.reject({ code: res.status, message: res.statusText });
+  })
   .then(() => {
     dispatch(fetchRegisterSuccess());
     dispatch(fetchLogin(user.username, user.password));
   })
   .catch(err => {
-    let {message} = err;
-    const {reason} = err.error;
-
-    if(message === 'The username already exists'){
-        message = 'The username already exists';
-    }
-
-    if(reason !== 'ValidationError'){
-        message = 'Unable to sign up, please try again later';
-    }
-
-    dispatch(fetchRegisterError(message));
-    if(reason === 'ValidationError'){
-        return Promise.reject(
-            new SubmissionError({
-                _error: message
-            })
-        )
-    }
+    dispatch(fetchRegisterError(err));
   })
 };
 

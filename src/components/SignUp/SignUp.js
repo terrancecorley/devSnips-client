@@ -26,10 +26,13 @@ export class SignUp extends Component {
       ) 
     };
 
+    let errMsg = this.props.errMsg;
+
     return (
       <form role="form" className="registration-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         {error}
+        <span className="db-err-msg">{errMsg ? errMsg : ''}</span>
         <Field
           label="Username"
           placeholder="Enter a username"
@@ -68,7 +71,8 @@ export class SignUp extends Component {
 };
 
 const mapStateToProps = (state) => ({
-    loggedIn: state.userReducer.loggedIn
+    loggedIn: state.userReducer.loggedIn,
+    errMsg: state.userReducer.error
   });
 
 export default connect(mapStateToProps)(reduxForm({

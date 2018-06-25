@@ -1,4 +1,9 @@
 
+.db-err-msg {
+  text-align: center;
+  color: red;
+}
+
 .registration-form {
   display: flex;
   flex-direction: column;
