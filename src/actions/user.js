@@ -103,12 +103,10 @@ export const registerUser = (user) => (dispatch) => {
     body: JSON.stringify(user)
   })
   .then((res) => {
-    if (res.status !== 200) {
+    if (!res.ok) {
       const errMsg = 'Username or Email already exists'
       throw errMsg;
-    }
-    return res.json();
-    // return Promise.reject({ code: res.status, message: res.statusText });
+    } else res.json();
   })
   .then(() => {
     dispatch(fetchRegisterSuccess());
