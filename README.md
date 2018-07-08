@@ -7,11 +7,11 @@ Before registering for the application it is recommended you know the basics of 
 ## Site Link
 You may use a demo account to login and view the functionality of the app.  
 
-Username: user1  
+You may use a demo account to login and view the functionality of the app.  
 
 Password: testtesttest    
 
-You can view the application [here](https://trusting-hodgkin-3af2bc.netlify.com/).
+You can view the application [here](https://devSnips.netlify.com/).
 
 ## Screenshots
 Login page:  
