@@ -7,7 +7,7 @@ Before registering for the application it is recommended you know the basics of 
 ## Site Link
 You may use a demo account to login and view the functionality of the app.  
 
-Username: user1
+Username: user1  
 Password: testtesttest    
 
 You can view the application [here](https://devSnips.netlify.com/).
