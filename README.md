@@ -34,17 +34,20 @@ Homepage demo 2:
 ![image](https://vmho9g.by.files.1drv.com/y4m_jSq9xjayrMKsZYuRj8gm-1Sg1ih1djo6VfppHz8T3V1J_zPfBeSaC4VyfCHppy9B-SfigjWnI9vaG5DsCHiITDeyl9VlDx4NGfIszbZv_-iLpmRXeVoWUDOXuwuiK2uE3LV78L5AFdJCPqrwgzep19bjzJAOOKHfQi28FCajQTncBHttppBUg7McCEJd6zoNCuBIzUwKXO0BFWEpClOoA?width=660&height=351&cropmode=none)  
 
 ### Tech Stack
-* React for the frontend
-* Redux for state management
-* ReduxForm for form validation
-* Node for the backend
-* PostgreSQL for the database
-* JWTs for authentication
+* React
+* Redux
+* ReduxForm
+* Node.js
+* Express.js
+* PostgreSQL
+* JWTs
+* Passport.js
+* CSS3
 
 ### Key Parts of Project
 * PostgreSQL DB is hosted on ElephantSQL for cloud storage.
 * My API lives within my server-side code (Node/Express combo) and is hosted on Heroku.
-* I've used React for my client-side code and Redux for state management. Bundled with webpack.
+* I've used React for my client-side code and Redux for state management. Bundled with webpack, the client is hosted on Netlify.
 
 ### NPM packages used
 * [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx)
