@@ -25,9 +25,23 @@ export class Landing extends Component {
       errMsg = (<p className="login-err-msg">{this.props.errorMsg}</p>)
     }
 
+    function showDemoCreds() {
+      console.log('click func ran');
+      let demoBtn = document.querySelector('#demo-btn');
+      let demoCreds = document.querySelector('.demo-creds-wrapper');
+      demoBtn.className = 'hide';
+      demoCreds.className = 'demo-creds-wrapper'
+    }
+
     return (
       <form role="form" className="login-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <button className="demo-btn" id="demo-btn" onClick={() => showDemoCreds()}>Demo</button>
+        <div className="hide demo-creds-wrapper">
+          <h3 className="demo-creds-title">Demo Account</h3>
+          <p>Username: user1</p>
+          <p>Password: testtesttest</p>
+        </div>
         <div>
           {errMsg}
         </div>
