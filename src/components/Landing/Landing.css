@@ -12,10 +12,43 @@
   font-size: 1.2rem;
 }
 
+.demo-btn {
+  max-width: 5em;
+  margin: 0 auto 1em;
+  padding: 0.4em 0.6em;
+  border-radius: 0.2em;
+  background-color: #06AED5;
+  color: #fdfdfd;
+  border: 1px solid #06AED5;
+  transition: all 0.2s ease-in-out;
+}
+
+.demo-btn:hover,
+.demo-btn:focus {
+  background-color: #086788;
+  border: 1px solid #086788;
+}
+
 .login-err-msg {
   color: red;
   font-weight: bold;
   margin: 0;
+}
+
+.demo-creds-wrapper {
+  border: 2px solid #06AED5;
+  padding: 1.25em;
+  max-width: 15em;
+  margin: 0 auto 1.5em;
+}
+
+.demo-creds-title {
+  text-align: center;
+  margin-top: 0;
+}
+
+.demo-creds-wrapper p {
+  margin: 0 !important;
 }
 
 .login-label {

@@ -38,8 +38,9 @@ export class Landing extends Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <button className="demo-btn" id="demo-btn" onClick={() => showDemoCreds()}>Demo</button>
         <div className="hide demo-creds-wrapper">
+          <h3 className="demo-creds-title">Demo Account</h3>
           <p>Username: user1</p>
-          <p>Passowrd: testtesttest</p>
+          <p>Password: testtesttest</p>
         </div>
         <div>
           {errMsg}
