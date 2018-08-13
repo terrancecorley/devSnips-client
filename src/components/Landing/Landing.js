@@ -26,7 +26,6 @@ export class Landing extends Component {
     }
 
     function showDemoCreds() {
-      console.log('click func ran');
       let demoBtn = document.querySelector('#demo-btn');
       let demoCreds = document.querySelector('.demo-creds-wrapper');
       demoBtn.className = 'hide';
