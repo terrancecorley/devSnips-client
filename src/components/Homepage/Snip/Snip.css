@@ -62,7 +62,7 @@
   margin-right: 0.4em;
 }
 
-.snip-submit-btn {
+/* .snip-submit-btn {
   color: #fdfdfd;
   font-size: 0.8em;
   background-color: #06AED5;
@@ -72,7 +72,7 @@
   transition: 
     background-color 0.2s ease-in-out,
     border 0.2s ease-in-out;
-}
+} */
 
 .snip-submit-btn:hover,
 .snip-submit-btn:focus {
