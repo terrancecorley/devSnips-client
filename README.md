@@ -33,6 +33,19 @@ Homepage demo 2:
 
 ![image](https://vmho9g.by.files.1drv.com/y4m_jSq9xjayrMKsZYuRj8gm-1Sg1ih1djo6VfppHz8T3V1J_zPfBeSaC4VyfCHppy9B-SfigjWnI9vaG5DsCHiITDeyl9VlDx4NGfIszbZv_-iLpmRXeVoWUDOXuwuiK2uE3LV78L5AFdJCPqrwgzep19bjzJAOOKHfQi28FCajQTncBHttppBUg7McCEJd6zoNCuBIzUwKXO0BFWEpClOoA?width=660&height=351&cropmode=none)  
 
+### API Documentation  
+**/api/users**  
+POST '/' -> Requires username, password, & email. Redirects new user to homepage.  
+  
+**/api/auth**  
+POST '/login' -> Requires username & password. Verifies user and redirects to homepage.  
+POST '/refresh' -> Requires username and userID. Refreshes auth token.  
+  
+**/api/snips**  
+GET '/' -> Requires userID. Returns all user-created snips back to user.  
+POST '/' -> Requires title, content, and userID. Returns newly created snip.  
+DELETE '/:id' -> Requires snipID and userID. Deletes specified snip.  
+
 ### Tech Stack
 * React
 * Redux
