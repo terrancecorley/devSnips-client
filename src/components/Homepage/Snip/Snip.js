@@ -24,8 +24,8 @@ export default function Snip(props) {
               </div>
               <div className="snip-footer">
                 <div className="snip-submit-controls">
-                  <button className="snip-submit-btn">Edit
-                  </button>
+                  {/* <button className="snip-submit-btn">Edit
+                  </button> */}
                 </div>
               </div>
             </li>
